@@ -14,7 +14,6 @@ import com.sourcepoint.gdpr_cmplibrary.NativeMessage
 import com.sourcepoint.gdpr_cmplibrary.NativeMessageAttrs
 import kotlinx.android.synthetic.main.content_main.*
 
-
 class MainActivity : AppCompatActivity() {
 
     private val mainViewGroup by lazy<ViewGroup> { findViewById(android.R.id.content) }
@@ -54,7 +53,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        super.onResume();
         Log.i(TAG, "init");
         buildGDPRConsentLib().run(buildNativeMessage());
     }
@@ -117,7 +115,7 @@ class MainActivity : AppCompatActivity() {
     private fun buildNativeMessage(): NativeMessage? {
         return object : NativeMessage(this) {
             override fun init() {
-//                super.init()
+                super.init()
                 // When using a customized layout one can completely override the init method
                 // not calling super.init() and inflating the native view with the chosen layout instead.
                 // In this case its important to set all the default child views using the setter methods
@@ -125,7 +123,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun setAttributes(attrs: NativeMessageAttrs) {
-//                super.setAttributes(attrs)
+                super.setAttributes(attrs)
                 //Here one can extend this method in order to set customized attributes other then the ones
                 //already set in the super.setAttributes. No need to completely override this method.
             }
